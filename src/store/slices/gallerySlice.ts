@@ -1,18 +1,19 @@
-import { GalleryFilters, GalleryResponse } from './../../types';
+import { GalleryFilters, GalleryResponse, GalleryItem } from './../../types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { GalleryState } from '../../types';
 import { fetchGallery } from '../actions/galleryActions';
+import mock from '../../mock.json'
 
 const initialState: GalleryState = {
     loading: false,
-    items: [],
+    items: mock as GalleryItem[],
     filters: {
-        section: "hot",
-        sort: "viral",
+        section: "top",
+        sort: "rising",
         page: 1,
         window: "day",
         showViral: true,
-        albumPreviews: true,
+        albumPreviews: false,
         showMature: false
     }
 }
@@ -23,13 +24,13 @@ const setLoader = (state: GalleryState): void => {
 
 const setGalleryRejected = (state: GalleryState, action: PayloadAction<GalleryResponse>): void => {
     state.loading = false
-    state.success = action.payload.success
+    state.statusCode = action.payload.status
 };
 
 const setGalleryFulfilled = (state: GalleryState, action: PayloadAction<GalleryResponse>): void => {
-    console.log(action.payload);
     state.loading = false
-    state.success = action.payload.success
+    state.statusCode = action.payload.status
+    state.items = action.payload.data.data
 };
 
 

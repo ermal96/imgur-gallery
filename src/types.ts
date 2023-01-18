@@ -1,5 +1,5 @@
 export type GalleryState = {
-    success?: boolean,
+    statusCode?: number,
     loading: boolean,
     items: GalleryItem[],
     filters: GalleryFilters
@@ -16,7 +16,9 @@ export type GalleryFilters = {
 }
 
 export type GalleryResponse = {
-    data: GalleryItem[]
+    data: {
+        data: GalleryItem[]
+    }
     success: boolean
     status: number
 }
