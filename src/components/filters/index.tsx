@@ -1,7 +1,6 @@
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import Button from "../common/Button";
 import { useDispatch, useSelector } from "react-redux"
-import { fetchGallery } from "../../store/actions/galleryActions";
 import { selectGalleryState } from "../../store/selectors/gallerySelector";
 import { galleryActions } from "../../store/slices/gallerySlice";
 import { AppDispatch } from "../../store";
@@ -10,11 +9,6 @@ const Filters = () => {
 
     const dispatch = useDispatch<AppDispatch>();
     const gallery = useSelector(selectGalleryState);
-
-    useEffect(() => {
-        dispatch(fetchGallery(gallery.filters))
-    }, [dispatch, gallery.filters]);
-
 
     const handleFilterTags = useCallback((type: "section" | "sort" | "window", value: string) => {
         dispatch(galleryActions.setFilters({
