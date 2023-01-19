@@ -17,6 +17,7 @@ export type GalleryFilters = {
     showViral: boolean;
     showMature: boolean;
     albumPreviews: boolean
+    visible: number;
 }
 
 export type GalleryResponse = {

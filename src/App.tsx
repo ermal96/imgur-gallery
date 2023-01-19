@@ -9,6 +9,7 @@ import Loading from "./components/common/Loading";
 const App = () => {
   const gallery = useSelector(selectGalleryState);
 
+
   if (gallery.loading) {
     return <Loading />
   }
@@ -18,11 +19,11 @@ const App = () => {
   }
 
   return (
-    <>
+    <div className="border-b" >
       <Header />
       <Filters />
       <GalleryGrid />
-    </>
+    </div>
 
   )
 }

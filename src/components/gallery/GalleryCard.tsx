@@ -16,7 +16,7 @@ const GalleryCard = ({ item, classColor }: Props) => {
     }, [])
     const renderMedia = useMemo(() => {
         if (isImage(item.images[0].link)) {
-            return <img src={item.images[0].link} alt={item.title} />
+            return <img className="w-full h-full object-cover" src={item.images[0].link} alt={item.title} />
         } else if (isVideo(item.images[0].link)) {
             return <video controls src={item.images[0].link} />
         } else {
@@ -25,9 +25,9 @@ const GalleryCard = ({ item, classColor }: Props) => {
     }, [isImage, isVideo, item.images, item.title]);
 
     return (
-        <div className={`border-2 overflow-hidden  mb-6 rounded ${classColor}`}>
+        <div className={`border-2 overflow-hidden h-[380px] relative  rounded ${classColor}`}>
             {renderMedia}
-            <div className="p-4">
+            <div className="p-4 absolute bottom-0 bg-white w-full">
                 <h3>{item.title}</h3>
             </div>
         </div>

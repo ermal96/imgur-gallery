@@ -1,16 +1,18 @@
 import { AxiosResponse } from 'axios';
-import { GalleryFilters, GalleryResponse } from './../../types';
+import { GalleryFilters, GalleryResponse, GalleryItem } from './../../types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { GalleryState } from '../../types';
 import { fetchGallery } from '../actions/galleryActions';
+import mock from '../../mock.json'
 
 const initialState: GalleryState = {
     loading: false,
-    items: [],
+    items: mock as GalleryItem[],
     filters: {
         section: "top",
         sort: "rising",
         page: 1,
+        visible: 20,
         window: "day",
         showViral: true,
         albumPreviews: false,
