@@ -13,7 +13,7 @@ const Root = () => {
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
-        // dispatch(fetchGallery(gallery.filters))
+        dispatch(fetchGallery(gallery.filters))
     }, [dispatch, gallery.filters]);
 
 
