@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
 import imgurLogo from "../../assets/Imgur-logo.svg";
 
 const Logo = () => {
     return (
-        <img src={imgurLogo} />
+        <Link to={"/"}>
+            <img alt="Logo Imgur" src={imgurLogo} />
+        </Link>
     )
 }
 

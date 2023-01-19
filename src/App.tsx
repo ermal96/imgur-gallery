@@ -1,4 +1,3 @@
-import Header from "./components/header/Header";
 import GalleryGrid from "./components/gallery/GalleryGrid";
 import Filters from "./components/filters";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,7 +22,6 @@ const App = () => {
 
   return (
     <div className="border-b" >
-      <Header />
       <Filters />
       <GalleryGrid />
     </div>
