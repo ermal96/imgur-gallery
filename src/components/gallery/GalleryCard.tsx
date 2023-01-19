@@ -32,7 +32,7 @@ const GalleryCard = ({ item, classColor, isSingle }: Props) => {
 
     return (
         <Link to={`/${item.id}`}>
-            <div className={`border-2 overflow-hidden h-[380px] relative  rounded ${classColor}`}>
+            <div className={`border-2 overflow-hidden h-[420px] relative  rounded ${classColor}`}>
                 {renderMedia}
                 <div className="p-4 absolute bottom-0 bg-white w-full">
                     <h3>{item.title}</h3>

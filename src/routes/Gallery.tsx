@@ -3,12 +3,11 @@ import Layout from '../components/common/Layout'
 import { useSelector } from 'react-redux';
 import { selectGalleryStateById } from '../store/selectors/gallerySelector';
 import GalleryCard from '../components/gallery/GalleryCard';
+import { ThumbDown, ThumbUp } from 'tabler-icons-react';
 
 const Gallery = () => {
   let { galleryId } = useParams();
   const data = useSelector(selectGalleryStateById(galleryId || ""))
-
-  console.log(data)
   return (
     <Layout>
       <div className='grid md:grid-cols-[1fr_2fr] gap-10 mt-10 px-6'>
@@ -26,12 +25,20 @@ const Gallery = () => {
           </div>}
 
           {data.ups && <div className='flex items-center mt-4'>
-            <p className='mr-2 font-bold'>Ups:</p>
+            <p className='mr-2 font-bold'> <ThumbUp
+              size={25}
+              strokeWidth={2}
+              color={'black'}
+            /></p>
             <p>{data.ups}</p>
           </div>}
 
           {data.downs && <div className='flex items-center mt-4'>
-            <p className='mr-2 font-bold'>Downs:</p>
+            <p className='mr-2 font-bold'><ThumbDown
+              size={25}
+              strokeWidth={2}
+              color={'black'}
+            /></p>
             <p>{data.downs}</p>
           </div>}
 

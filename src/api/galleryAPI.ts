@@ -10,7 +10,6 @@ export const getGallery = async (filters: GalleryFilters, rejectWithValue: any) 
 
     } catch (_err) {
         let err = (_err as AxiosError)
-        console.log(err.response?.data)
         return rejectWithValue(err.response?.data)
     }
 

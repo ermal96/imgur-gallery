@@ -6,6 +6,7 @@ import Button from "../common/Button";
 import { AppDispatch } from "../../store";
 import { galleryActions } from "../../store/slices/gallerySlice";
 import Loading from "../common/Loading";
+import { Reload } from "tabler-icons-react";
 
 const GalleryGrid = () => {
     const gallery = useSelector(selectGalleryState);
@@ -35,14 +36,14 @@ const GalleryGrid = () => {
     }
 
     return (
-        <main className="w-full px-6 mt-10 mb-10">
+        <main className="container mx-auto px-4 mt-10 mb-10">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 {renderItems}
             </div>
             <div className="flex items-center justify-center w-full mt-10">
                 {gallery.items.length <= gallery.filters.visible ?
                     <p>You have arrived at the end</p> :
-                    <Button onClick={handleLoadMore}>Load more</Button>}
+                    <Button onClick={handleLoadMore}><span className="flex items-center justify-center"><Reload size={15} className="mr-2" /> Load more</span></Button>}
 
             </div>
         </main>

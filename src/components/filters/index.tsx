@@ -27,18 +27,18 @@ const Filters = () => {
 
 
     return (
-        <div className="px-6 flex flex-wrap items-end gap-10 w-full mt-10">
+        <div className="container mx-auto px-4 flex flex-wrap items-end gap-10 mt-10">
             <div className="">
                 <h3 className="mb-2 text-sm font-bold">Section</h3>
                 <div className="flex">
                     <Button onClick={() => handleFilterTags('section', 'hot')} active={gallery.filters.section === "hot"}>
-                        hot
+                        <span>hot</span>
                     </Button>
                     <Button onClick={() => handleFilterTags('section', 'top')} active={gallery.filters.section === "top"}>
-                        top
+                        <span>top</span>
                     </Button>
                     <Button onClick={() => handleFilterTags('section', 'user')} active={gallery.filters.section === "user"}>
-                        user
+                        <span>user</span>
                     </Button>
                 </div>
             </div>
@@ -48,19 +48,19 @@ const Filters = () => {
                 <div className="flex">
 
                     <Button onClick={() => handleFilterTags('sort', 'viral')} active={gallery.filters.sort === "viral"}>
-                        viral
+                        <span>viral</span>
                     </Button>
 
                     <Button onClick={() => handleFilterTags('sort', 'top')} active={gallery.filters.sort === "top"}>
-                        top
+                        <span>top</span>
                     </Button>
 
                     <Button onClick={() => handleFilterTags('sort', 'time')} active={gallery.filters.sort === "time"}>
-                        time
+                        <span>time</span>
                     </Button>
 
                     <Button onClick={() => handleFilterTags('sort', 'rising')} active={gallery.filters.sort === "rising"}>
-                        rising
+                        <span>rising</span>
                     </Button>
 
                 </div>
@@ -72,16 +72,16 @@ const Filters = () => {
                     <h3 className="mb-2 text-sm font-bold">Window</h3>
                     <div className="flex">
                         <Button onClick={() => handleFilterTags('window', 'day')} active={gallery.filters.window === "day"}>
-                            day
+                            <span>day</span>
                         </Button>
                         <Button onClick={() => handleFilterTags('window', 'week')} active={gallery.filters.window === "week"}>
-                            week
+                            <span>week</span>
                         </Button>
                         <Button onClick={() => handleFilterTags('window', 'month')} active={gallery.filters.window === "month"}>
-                            month
+                            <span>month</span>
                         </Button>
                         <Button onClick={() => handleFilterTags('window', 'all')} active={gallery.filters.window === "all"}>
-                            all
+                            <span>all</span>
                         </Button>
                     </div>
 
