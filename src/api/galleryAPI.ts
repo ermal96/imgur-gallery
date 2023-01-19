@@ -4,9 +4,7 @@ import api from "./index"
 
 export const getGallery = async (filters: GalleryFilters, rejectWithValue: any) => {
     try {
-        const response = await api.get(`/${filters.section}/
-                ${filters.sort}/${filters.window}/
-                ${filters.page}?showViral=${filters.showViral}&mature=${filters.showMature}&album_previews=${filters.albumPreviews}`)
+        const response = await api.get(`/${filters.section}/${filters.sort}/${filters.window}/${filters.page}?showViral=${filters.showViral}&mature=${filters.showMature}&album_previews=${filters.albumPreviews}`)
 
         return response;
 
