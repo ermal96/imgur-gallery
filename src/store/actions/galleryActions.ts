@@ -1,4 +1,5 @@
-import { getGallery } from '../../api/galleryApi';
+
+import { getGallery } from '../../api/galleryAPI';
 import { GalleryFilters } from './../../types';
 import { createAsyncThunk, } from '@reduxjs/toolkit'
 
