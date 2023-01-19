@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { selectGalleryState } from "../../store/selectors/gallerySelector";
 import { galleryActions } from "../../store/slices/gallerySlice";
 import { AppDispatch } from "../../store";
+import Checkbox from "../common/Checkbox";
 
 const Filters = () => {
 
@@ -17,9 +18,16 @@ const Filters = () => {
         }))
     }, [dispatch, gallery.filters]);
 
+    const handleFilterToggle = useCallback((name: string, value: boolean) => {
+        dispatch(galleryActions.setFilters({
+            ...gallery.filters,
+            [name]: value
+        }))
+    }, [dispatch, gallery.filters]);
+
 
     return (
-        <div className="px-6 flex flex-wrap gap-10 w-full mt-10">
+        <div className="px-6 flex flex-wrap items-end gap-10 w-full mt-10">
             <div className="">
                 <h3 className="mb-2 text-sm font-bold">Section</h3>
                 <div className="flex">
@@ -80,6 +88,16 @@ const Filters = () => {
                 </div>}
 
 
+            <div className="flex">
+                <div className="mr-4">
+                    <Checkbox checked={gallery.filters.showViral}
+                        onChange={(e) => handleFilterToggle('showViral', e.target.checked)} label="Show Viral" />
+                </div>
+                <div className="mr-4">
+                    <Checkbox checked={gallery.filters.showMature}
+                        onChange={(e) => handleFilterToggle('showMature', e.target.checked)} label="Show Mature" />
+                </div>
+            </div>
 
 
         </div>

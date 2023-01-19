@@ -9,7 +9,7 @@ const initialState: GalleryState = {
     loading: false,
     items: mock as GalleryItem[],
     filters: {
-        section: "top",
+        section: "hot",
         sort: "rising",
         page: 1,
         visible: 20,

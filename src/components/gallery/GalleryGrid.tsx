@@ -5,6 +5,7 @@ import GalleryCard from "./GalleryCard";
 import Button from "../common/Button";
 import { AppDispatch } from "../../store";
 import { galleryActions } from "../../store/slices/gallerySlice";
+import Loading from "../common/Loading";
 
 const GalleryGrid = () => {
     const gallery = useSelector(selectGalleryState);
@@ -28,6 +29,10 @@ const GalleryGrid = () => {
             visible: gallery.filters.visible + 20
         }))
     }, [dispatch, gallery.filters]);
+
+    if (gallery.loading) {
+        return <Loading />
+    }
 
     return (
         <main className="w-full px-6 mt-10 mb-10">
