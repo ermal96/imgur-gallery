@@ -7,8 +7,9 @@ You can view a live demo over at [https://imgur.ermal.dev/](https://imgur.ermal.
 To get the frontend running locally:
 
 * Clone this repo
-* `npm install` to install all req'd dependencies
-* `npm run start` to start the local server (this project uses [https://vitejs.dev/](https://vitejs.dev))
+* `npm install` to install all required dependencies
+* `npm run dev` to start the local server (this project uses [https://vitejs.dev/](https://vitejs.dev))
+* `npm run build` to build the project/output folder is `/dist`
 
 Local web server will use port 5173 instead of standard React's port 3000
 
