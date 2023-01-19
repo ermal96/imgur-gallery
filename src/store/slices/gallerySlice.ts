@@ -25,7 +25,7 @@ const setLoader = (state: GalleryState): void => {
 
 const setGalleryRejected = (state: GalleryState, action: PayloadAction<AxiosResponse>): void => {
     state.loading = false
-    state.error = action.payload.data;
+    state.error = action.payload;
 };
 
 const setGalleryFulfilled = (state: GalleryState, action: PayloadAction<GalleryResponse>): void => {

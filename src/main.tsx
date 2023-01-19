@@ -9,11 +9,13 @@ import {
 import './index.css'
 import Root from './routes/root'
 import Gallery from './routes/Gallery';
+import ErrorHandler from './components/common/ErrorHandler';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorHandler />
   },
   {
     path: "/:galleryId",
