@@ -23,6 +23,7 @@ Since this project is just an test the client id required from Imgur API is hard
 * Tabler icons
 * Es lint
 * React router
+* Axios
 
 ## Functionality overview
 
