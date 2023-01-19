@@ -20,6 +20,7 @@ const router = createBrowserRouter([
   {
     path: "/:galleryId",
     element: <Gallery />,
+    errorElement: <ErrorHandler />
   },
 ]);
 
