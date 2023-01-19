@@ -1,12 +1,12 @@
-import { GalleryFilters, GalleryResponse, GalleryItem } from './../../types';
+import { AxiosResponse } from 'axios';
+import { GalleryFilters, GalleryResponse } from './../../types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { GalleryState } from '../../types';
 import { fetchGallery } from '../actions/galleryActions';
-import mock from '../../mock.json'
 
 const initialState: GalleryState = {
     loading: false,
-    items: mock as GalleryItem[],
+    items: [],
     filters: {
         section: "top",
         sort: "rising",
@@ -22,15 +22,14 @@ const setLoader = (state: GalleryState): void => {
     state.loading = true
 };
 
-const setGalleryRejected = (state: GalleryState, action: PayloadAction<GalleryResponse>): void => {
+const setGalleryRejected = (state: GalleryState, action: PayloadAction<AxiosResponse>): void => {
     state.loading = false
-    state.statusCode = action.payload.status
+    state.error = action.payload.data;
 };
 
 const setGalleryFulfilled = (state: GalleryState, action: PayloadAction<GalleryResponse>): void => {
-    state.loading = false
-    state.statusCode = action.payload.status
     state.items = action.payload.data.data
+    state.loading = false
 };
 
 

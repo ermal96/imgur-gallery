@@ -1,9 +1,13 @@
-export type GalleryState = {
-    statusCode?: number,
-    loading: boolean,
-    items: GalleryItem[],
-    filters: GalleryFilters
-}
+import { AxiosResponse } from "axios";
+
+type NewType = {
+    error?: AxiosResponse;
+    loading: boolean;
+    items: GalleryItem[];
+    filters: GalleryFilters;
+};
+
+export type GalleryState = NewType
 
 export type GalleryFilters = {
     section: "hot" | "top" | "user";

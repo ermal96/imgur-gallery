@@ -4,15 +4,16 @@ import { useDispatch, useSelector } from "react-redux"
 import { fetchGallery } from "../../store/actions/galleryActions";
 import { selectGalleryState } from "../../store/selectors/gallerySelector";
 import { galleryActions } from "../../store/slices/gallerySlice";
+import { AppDispatch } from "../../store";
 
 const Filters = () => {
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
     const gallery = useSelector(selectGalleryState);
 
     useEffect(() => {
-        // dispatch(fetchGallery(gallery.filters))
-    }, []);
+        dispatch(fetchGallery(gallery.filters))
+    }, [dispatch, gallery.filters]);
 
 
     const handleFilterTags = useCallback((type: "section" | "sort" | "window", value: string) => {
@@ -24,7 +25,7 @@ const Filters = () => {
 
 
     return (
-        <div className="px-6 flex gap-10 w-full mt-10">
+        <div className="px-6 flex flex-wrap gap-10 w-full mt-10">
             <div className="">
                 <h3 className="mb-2 text-sm font-bold">Section</h3>
                 <div className="flex">
