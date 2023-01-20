@@ -4,11 +4,10 @@ import { Link } from "react-router-dom"
 
 type Props = {
     item: GalleryItem,
-    classColor?: string,
     isSingle?: boolean
 }
 
-const GalleryCard = ({ item, classColor, isSingle }: Props) => {
+const GalleryCard = ({ item, isSingle }: Props) => {
     const isImage = useCallback((url: string) => {
         return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
     }, [])
@@ -32,7 +31,7 @@ const GalleryCard = ({ item, classColor, isSingle }: Props) => {
 
     return (
         <Link to={`/${item.id}`}>
-            <div className={`border-2 overflow-hidden h-[420px] relative  rounded ${classColor}`}>
+            <div className="border-2 overflow-hidden h-[420px] relative  rounded ">
                 {renderMedia}
                 <div className="p-4 absolute bottom-0 bg-white w-full">
                     <h3>{item.title}</h3>

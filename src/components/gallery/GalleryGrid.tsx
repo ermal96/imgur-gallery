@@ -12,15 +12,12 @@ const GalleryGrid = () => {
     const gallery = useSelector(selectGalleryState);
     const dispatch = useDispatch<AppDispatch>();
 
-    const colors = useMemo(() => ["green", "lime", "yellow", "cyan", "violet", "pink"], [])
-
     const renderItems = useMemo(() => {
 
         return gallery.items.slice(0, gallery.filters.visible).filter((item) => item.images).map((item) => {
-            const classColor = `border-${colors[Math.floor(Math.random() * colors.length)]}-300`;
-            return <GalleryCard classColor={classColor} item={item} key={item.id} />
+            return <GalleryCard item={item} key={item.id} />
         })
-    }, [colors, gallery.filters.visible, gallery.items]);
+    }, [gallery.filters.visible, gallery.items]);
 
 
 
