@@ -11,7 +11,7 @@ const Gallery = () => {
   return (
     <Layout>
       <div className='grid md:grid-cols-[1fr_2fr] gap-10 mt-10 px-6'>
-        <GalleryCard isSingle classColor='' item={data} />
+        <GalleryCard isSingle item={data} />
 
         <div className='meta-data'>
           <h1 className='text-4xl'>{data.title}</h1>
